@@ -21,13 +21,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      // routes: {
-      //   '/': (context) => PersonenListe(),
-      //   'zweiteSeite': (context) => SecondPage(),
-      //   'newPerson': (context) => NewPerson(),
-      //   'personDetails': (context) => PersonDetails(),
-      // },
       // ignore: missing_return
       onGenerateRoute: (settings) {
         switch (settings.name){
