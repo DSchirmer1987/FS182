@@ -66,7 +66,7 @@ class _PersonenListeState extends State<PersonenListe> {
       print(person[0]);
       setState(() {
         for(var p in person){
-          Person personObj = new Person(p['firstname'], p['lastname'], gender:p['gender'], birthday: p['birthday'], email: p['birthday'], age:p['age'], image: p['image']);
+          Person personObj = new Person(p['firstname'], p['lastname'], gender:p['gender'], birthday: p['birthday'], email: p['email'], age:p['age'], image: p['image']);
           personen.add(personObj);
         }
         for(Person pObj in personen){

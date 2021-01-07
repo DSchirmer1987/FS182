@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/models/person.dart';
 import 'package:myapp/utils/network.dart';
+import 'package:myapp/widgets/redressedText.dart';
 
 class PersonDetails extends StatelessWidget {
   Person personObj;
@@ -22,7 +24,7 @@ class PersonDetails extends StatelessWidget {
             subtitle: Text('Vorname'),
           ),
           ListTile(
-            title: Text(personObj.lastname),
+            title: RedressedText(personObj.lastname),
             subtitle: Text('Nachname'),
           ),
           ListTile(
@@ -30,7 +32,7 @@ class PersonDetails extends StatelessWidget {
             subtitle: Text('Geschlecht'),
           ),
           ListTile(
-            title: Text(personObj.email),
+            title: Text(personObj.email, style: GoogleFonts.eastSeaDokdo(),),
             subtitle: Text('E-Mail'),
           ),
           ListTile(
