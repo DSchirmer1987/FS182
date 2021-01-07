@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -38,6 +39,20 @@ class NewPerson extends StatelessWidget {
     String pattern = r'(^[a-zA-Z ]+$)';
     RegExp regExp = new RegExp(pattern);
     return regExp.hasMatch(value);
+  }
+
+  void pickImage() async{
+    final image = await picker.getImage(source: ImageSource.gallery);
+    if(image != null){
+      _image = File(image.path);
+    }
+  }
+
+  void takePhoto() async{
+    final image = await picker.getImage(source: ImageSource.camera);
+    if(image != null){
+      _image = File(image.path);
+    }
   }
 
   @override
@@ -161,6 +176,23 @@ class NewPerson extends StatelessWidget {
             ],
           ),
         )
+      ),
+      floatingActionButton: SpeedDial(
+        animatedIcon: AnimatedIcons.menu_close,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.photo),
+            onTap: () {
+              this.takePhoto();
+            },
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.photo_album),
+            onTap: () {
+              this.pickImage();
+            },
+          )
+        ],
       ),
     );
   }
