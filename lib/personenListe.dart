@@ -88,6 +88,19 @@ class _PersonenListeState extends State<PersonenListe> {
       appBar: AppBar(
         title: Text('PersonenListe'),
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Text('My Drawer'),
+            ),
+            ListTile(
+              title: Text("Liste leeren"),
+              onTap: () => clearPersonenListe(),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Expanded(
