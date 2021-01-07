@@ -153,6 +153,7 @@ class _PersonenListeState extends State<PersonenListe> {
               },
             ),
           ),
+          SizedBox(height: 100.0,)
         ],
       ),
       floatingActionButton: SpeedDial(
