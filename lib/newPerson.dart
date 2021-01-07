@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter/foundation.dart';
 
 import 'models/person.dart';
 
@@ -55,6 +57,10 @@ class NewPerson extends StatelessWidget {
       _image = File(image.path);
       textEditingController['image'].text = _image.path;
     }
+  }
+
+  Future<File> get _localPath async{
+    final directory = await getApplicationDocumentsDirectory();
   }
 
   @override
