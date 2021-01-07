@@ -45,6 +45,7 @@ class NewPerson extends StatelessWidget {
     final image = await picker.getImage(source: ImageSource.gallery);
     if(image != null){
       _image = File(image.path);
+      textEditingController['image'].text = image.path;
     }
   }
 
@@ -52,6 +53,7 @@ class NewPerson extends StatelessWidget {
     final image = await picker.getImage(source: ImageSource.camera);
     if(image != null){
       _image = File(image.path);
+      textEditingController['image'].text = image.path;
     }
   }
 
