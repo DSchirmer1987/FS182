@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:myapp/models/person.dart';
 import 'package:myapp/utils/network.dart';
@@ -40,7 +42,7 @@ class PersonDetails extends StatelessWidget {
             subtitle: Text('Geburtsdatum'),
           ),
           ListTile(
-            title: personObj.image != null && Network.isAvailable ? Image.network(personObj.image, height: 50, width: 50, alignment: Alignment.centerLeft) : Image.asset('lib/images/default-avatar.png', height: 50, width: 50, alignment: Alignment.centerLeft,),
+            title: personObj.image != null && Network.isAvailable ? Image.network(personObj.image, height: 50, width: 50, alignment: Alignment.centerLeft) : Image.file(new File(personObj.image), height: 50, width: 50, alignment: Alignment.centerLeft,),
             subtitle: Text('Bild'),
           ),
         ],
