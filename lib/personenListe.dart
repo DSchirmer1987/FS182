@@ -114,49 +114,53 @@ class _PersonenListeState extends State<PersonenListe> {
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
+            child: Scrollbar(
+              isAlwaysShown: true,
               controller: scrollController,
-              itemCount: personen.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(personen.elementAt(index).firstname + ' ' + personen.elementAt(index).lastname),
-                  leading: IconButton(
-                    icon: Icon(Icons.delete, color: Colors.red,),
-                    onPressed: () async{
-                      SharedPreferences preferences = await _prefs;
-                      List<String> stringListe = List<String>();
-                      print("Gelöscht");
-                      setState(() {
-                        personen.removeAt(index);
-                        for(Person pObj in personen){
-                          stringListe.add(pObj.toJson());
-                        }
-                        preferences.setStringList('SavedPersonen', stringListe);
-                      });                      
-                    },
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.edit),
-                    onPressed: () async{
-                      SharedPreferences preferences = await _prefs;
-                      List<String> stringListe = List<String>();
-                      Navigator.pushNamed(context, 'newPerson', arguments: personen.elementAt(index)).then((value){
+                child: ListView.builder(
+                controller: scrollController,
+                itemCount: personen.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(personen.elementAt(index).firstname + ' ' + personen.elementAt(index).lastname),
+                    leading: IconButton(
+                      icon: Icon(Icons.delete, color: Colors.red,),
+                      onPressed: () async{
+                        SharedPreferences preferences = await _prefs;
+                        List<String> stringListe = List<String>();
+                        print("Gelöscht");
                         setState(() {
+                          personen.removeAt(index);
                           for(Person pObj in personen){
                             stringListe.add(pObj.toJson());
                           }
-                            preferences.setStringList('SavedPersonen', stringListe);
+                          preferences.setStringList('SavedPersonen', stringListe);
+                        });                      
+                      },
+                    ),
+                    trailing: IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: () async{
+                        SharedPreferences preferences = await _prefs;
+                        List<String> stringListe = List<String>();
+                        Navigator.pushNamed(context, 'newPerson', arguments: personen.elementAt(index)).then((value){
+                          setState(() {
+                            for(Person pObj in personen){
+                              stringListe.add(pObj.toJson());
+                            }
+                              preferences.setStringList('SavedPersonen', stringListe);
+                          });
                         });
-                      });
-                    }
-                    ,
-                  ),
-                  onTap: () => Navigator.pushNamed(context, 'personDetails', arguments: personen.elementAt(index)),
-                );
-              },
+                      }
+                      ,
+                    ),
+                    onTap: () => Navigator.pushNamed(context, 'personDetails', arguments: personen.elementAt(index)),
+                  );
+                },
+              ),
             ),
           ),
-          SizedBox(height: 100.0,)
+          // SizedBox(height: 100.0,)
         ],
       ),
       floatingActionButton: SpeedDial(
