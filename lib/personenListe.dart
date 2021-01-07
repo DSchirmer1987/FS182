@@ -39,6 +39,7 @@ class _PersonenListeState extends State<PersonenListe> {
       //     );
       //   },
       // );
+      Scaffold.of(context).showSnackBar(snackBar);
     setState(() {
       
     });
@@ -81,6 +82,10 @@ class _PersonenListeState extends State<PersonenListe> {
     });
     preferences.setStringList('SavedPersonen', null);
   }
+
+  final snackBar = SnackBar(
+    content: Text('Network failed'),
+  );
 
   @override
   Widget build(BuildContext context) {
