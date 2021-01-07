@@ -18,7 +18,7 @@ class PersonDetails extends StatelessWidget {
       body: Column(
         children: [
           ListTile(
-            title: Text(personObj.firstname),
+            title: Text(personObj.firstname, style: TextStyle(fontFamily: 'Redressed'),),
             subtitle: Text('Vorname'),
           ),
           ListTile(
