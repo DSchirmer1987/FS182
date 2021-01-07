@@ -15,6 +15,7 @@ class _PersonenListeState extends State<PersonenListe> {
   List<Person> personen = List<Person>();
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   final navigatorKey = GlobalKey<NavigatorState>();
+  GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -39,7 +40,8 @@ class _PersonenListeState extends State<PersonenListe> {
       //     );
       //   },
       // );
-      Scaffold.of(context).showSnackBar(snackBar);
+      // Scaffold.of(context).showSnackBar(snackBar);
+      scaffoldkey.currentState.showSnackBar(snackBar);
     setState(() {
       
     });
@@ -90,6 +92,7 @@ class _PersonenListeState extends State<PersonenListe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldkey,
       appBar: AppBar(
         title: Text('PersonenListe'),
       ),
