@@ -16,6 +16,7 @@ class _PersonenListeState extends State<PersonenListe> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   final navigatorKey = GlobalKey<NavigatorState>();
   GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
+  ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
@@ -73,6 +74,7 @@ class _PersonenListeState extends State<PersonenListe> {
           stringListe.add(pObj.toJson());
         }
         preferences.setStringList('SavedPersonen', stringListe);
+        scrollController.jumpTo(scrollController.position.maxScrollExtent);
       });
     });
   }
@@ -113,6 +115,7 @@ class _PersonenListeState extends State<PersonenListe> {
         children: [
           Expanded(
             child: ListView.builder(
+              controller: scrollController,
               itemCount: personen.length,
               itemBuilder: (context, index) {
                 return ListTile(
