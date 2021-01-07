@@ -34,6 +34,9 @@ class NewPerson extends StatelessWidget {
       textEditingController['birthday'].text = this.person.birthday;
       textEditingController['email'].text = this.person.email;
       textEditingController['image'].text = this.person.image;
+      this.readFile().then((value){
+        print(value);
+      });
     }
   }
 
