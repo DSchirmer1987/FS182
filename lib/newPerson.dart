@@ -74,6 +74,12 @@ class NewPerson extends StatelessWidget {
     return file.writeAsString(text);
   }
 
+  Future<String> readFile() async{
+    final file = await _localFile;
+    String content = await file.readAsString();
+    return content;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,6 +194,7 @@ class NewPerson extends StatelessWidget {
                     this.person.birthday = textEditingController['birthday'].text;
                     this.person.image = textEditingController['image'].text;
                     this.person.age = int.parse(textEditingController['age'].text);
+                    await writeFile(this.person.toJson());
                   }
                   Navigator.pop(context);
                 },
