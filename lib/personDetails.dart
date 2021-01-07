@@ -42,7 +42,11 @@ class PersonDetails extends StatelessWidget {
             subtitle: Text('Geburtsdatum'),
           ),
           ListTile(
-            title: Network.isAvailable && personObj.image.contains('http') ? Image.network(personObj.image, height: 50, width: 50, alignment: Alignment.centerLeft) : Image.file(new File(personObj.image), height: 50, width: 50, alignment: Alignment.centerLeft,),
+            title:  Network.isAvailable && personObj.image.contains('http') ? 
+                    Image.network(personObj.image, height: 50, width: 50, alignment: Alignment.centerLeft) :
+                    personObj.image.isNotEmpty ? 
+                    Image.file(new File(personObj.image), height: 50, width: 50, alignment: Alignment.centerLeft,) : 
+                    Image.asset('lib/images/default-avatar.png', height: 50, width: 50, alignment: Alignment.centerLeft,),
             subtitle: Text('Bild'),
           ),
         ],
