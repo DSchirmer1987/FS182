@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'models/person.dart';
@@ -16,6 +19,8 @@ class NewPerson extends StatelessWidget {
     'age': TextEditingController(),
     'image': TextEditingController()
   };
+  File _image;
+  final picker = ImagePicker();
 
   NewPerson({this.person}){
     if (this.person != null){
