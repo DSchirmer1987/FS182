@@ -59,8 +59,19 @@ class NewPerson extends StatelessWidget {
     }
   }
 
-  Future<File> get _localPath async{
+  Future<String> get _localPath async{
     final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
+  }
+
+  Future<File> get _localFile async{
+    final path = await _localPath;
+    return File('$path/person.txt');
+  }
+
+  Future<File> writeFile(String text) async{
+    final file = await _localFile;
+    return file.writeAsString(text);
   }
 
   @override
