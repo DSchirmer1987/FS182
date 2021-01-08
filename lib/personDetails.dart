@@ -14,6 +14,7 @@ class PersonDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(Platform.localeName);
     return Scaffold(
       appBar: AppBar(
         title: Text("Person Details"),
