@@ -77,6 +77,7 @@ class _PersonenListeState extends State<PersonenListe> {
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).orientation);
     return Scaffold(
       key: scaffoldkey,
       appBar: AppBar(
