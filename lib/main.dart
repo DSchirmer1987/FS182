@@ -18,17 +18,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate
-      ],
-      supportedLocales: [
-        const Locale('en', ''),
-        const Locale('de', ''),
-        const Locale('es', '')
-      ],
+      localizationsDelegates:
+      AppLocalizations.localizationsDelegates, 
+      // [
+      //   AppLocalizations.delegate,
+      //   GlobalMaterialLocalizations.delegate,
+      //   GlobalWidgetsLocalizations.delegate,
+      //   GlobalCupertinoLocalizations.delegate
+      // ],
+      supportedLocales: 
+      AppLocalizations.supportedLocales,
+      // [
+      //   const Locale('en', ''),
+      //   const Locale('de', ''),
+      //   const Locale('es', '')
+      // ],
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,

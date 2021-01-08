@@ -1,0 +1,9 @@
+{
+    "firstname" : "Vorname",
+    "lastname" : "Nachname",
+    "birthday" : "Geburtstag",
+    "age" : "Alter",
+    "email" : "E-Mail",
+    "gender" : "Geschlecht",
+    "picture" : "Bild"
+}
