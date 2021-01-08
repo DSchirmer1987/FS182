@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/newPerson.dart';
 import 'package:myapp/personDetails.dart';
@@ -5,6 +6,7 @@ import 'package:myapp/personenListe.dart';
 import 'package:myapp/secondpage.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:myapp/services/pushNotificationsservice.dart';
 import 'utils/network.dart';
 
 void main() {
@@ -14,9 +16,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final pushNotificationService = PushNotificationService(_firebaseMessaging);
+    pushNotificationService.initialise();
     return MaterialApp(
       localizationsDelegates:
       AppLocalizations.localizationsDelegates, 
