@@ -1,0 +1,18 @@
+{
+    "firstname": "Firstname",
+    "@firstname": {
+        "description": "The firstname"
+    }
+}
+{
+    "lastname": "Lastname",
+    "@firstname": {
+        "description": "The firstname"
+    }    
+}
+    "birthday": "Birthday",
+    "age": "Age",
+    "email": "E-Mail",
+    "picture": "Picture",
+    "gender": "Gender"
+}
