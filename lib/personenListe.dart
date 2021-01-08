@@ -96,7 +96,7 @@ class _PersonenListeState extends State<PersonenListe> {
           ],
         ),
       ),
-      body: Column(
+      body: MediaQuery.of(context).orientation == Orientation.landscape ? Text("Landscape-Mode") : Column(
         children: [
           Expanded(
             child: Scrollbar(
