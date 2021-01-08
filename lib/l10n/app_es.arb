@@ -1,0 +1,9 @@
+{
+    "firstname" : "Nombre",
+    "lastname" : "Apellido",
+    "birthday" : "Cumpleaños",
+    "age" : "Edad",
+    "email" : "Correo Electrónico",
+    "gender" : "Género",
+    "picture" : "Foto"
+}
