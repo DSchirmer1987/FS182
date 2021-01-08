@@ -3,7 +3,7 @@ import 'package:myapp/newPerson.dart';
 import 'package:myapp/personDetails.dart';
 import 'package:myapp/personenListe.dart';
 import 'package:myapp/secondpage.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'utils/network.dart';
 
 void main() {
@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        
+      ],
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
