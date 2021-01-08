@@ -36,6 +36,7 @@ dependencies:
   connectivity: ^2.0.0
   image_picker: ^0.6.6+5
   google_fonts: ^1.1.1
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +47,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
