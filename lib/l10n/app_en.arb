@@ -2,17 +2,29 @@
     "firstname": "Firstname",
     "@firstname": {
         "description": "The firstname"
-    }
-}
-{
+    },
     "lastname": "Lastname",
-    "@firstname": {
-        "description": "The firstname"
-    }    
-}
+    "@lastname": {
+        "description": "The lastname"
+    },
     "birthday": "Birthday",
+    "@birthday": {
+        "description": "The birthday"
+    },
     "age": "Age",
+    "@age": {
+        "description": "The age"
+    },
     "email": "E-Mail",
+    "@email": {
+        "description": "The email"
+    },
     "picture": "Picture",
-    "gender": "Gender"
+    "@picture": {
+        "description": "The picture"
+    },
+    "gender": "Gender",
+    "@gender": {
+        "description": "The gender"
+    }
 }
