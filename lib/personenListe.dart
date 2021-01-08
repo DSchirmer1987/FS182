@@ -26,22 +26,6 @@ class _PersonenListeState extends State<PersonenListe> {
   }
 
   void updateUI(){
-      // showDialog(
-      //   context: context,
-      //   builder: (context) {
-      //     return AlertDialog(
-      //       title: Text("Netzwerkstatus"),
-      //       content: Text("Network changed to " + Network.isAvailable.toString()),
-      //       actions: [
-      //         RaisedButton(
-      //           child: Text("Ok"),
-      //           onPressed: () => Navigator.of(context).pop(),
-      //         ),
-      //       ],
-      //     );
-      //   },
-      // );
-      // Scaffold.of(context).showSnackBar(snackBar);
       scaffoldkey.currentState.showSnackBar(snackBar);
     setState(() {
       
